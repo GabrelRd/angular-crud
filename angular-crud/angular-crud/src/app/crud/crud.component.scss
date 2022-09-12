@@ -1,0 +1,37 @@
+.components{
+    // width: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin-left: 10%;
+    justify-content: space-between, 5px;
+    margin-top: 5%;
+    //flex-wrap: wrap;
+}
+.button{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    margin-left: 40%;
+    margin-top: 10px;
+}
+.align{
+    padding: 3px;
+    display: grid;
+    grid-template-columns: auto auto ;
+}
+.align2{
+    display: grid;
+    grid-template-columns: auto ;
+}
+.labels{
+    width: 170px;
+    height: 20px;
+    align-content: center;
+    text-align: center;
+}
+.input{
+    width: 170px;
+    height: 20px;
+    align-content: center;
+}
