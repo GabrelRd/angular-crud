@@ -36,8 +36,10 @@
     align-content: center;
 }
 .table{
+    max-height: 350px;
     min-width: 200px;
     padding: 20px;
     border: 2px solid black;
     text-align: center;
+    overflow-y: scroll;
 }
