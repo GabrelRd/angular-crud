@@ -24,4 +24,3 @@ export class CrudDto{
     //     this.cep= cepIn;
     // }
 }
-

@@ -4,7 +4,7 @@
     flex-direction: row;
     align-items: stretch;
     margin-left: 10%;
-    justify-content: space-between, 5px;
+    justify-content: space-around;
     margin-top: 5%;
     //flex-wrap: wrap;
 }
@@ -34,4 +34,10 @@
     width: 170px;
     height: 20px;
     align-content: center;
+}
+.table{
+    min-width: 200px;
+    padding: 20px;
+    border: 2px solid black;
+    text-align: center;
 }

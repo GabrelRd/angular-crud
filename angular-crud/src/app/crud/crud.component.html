@@ -1,0 +1,64 @@
+
+<h1>Form Test</h1>
+<div class="components">
+    <form [formGroup]="form" (ngSubmit)="saveBtn()">
+    <div>
+        <div class="align">
+            <label for="user" class="labels"> Name </label>
+            <label for="email" class="labels"> Email </label>
+            <input class="input" placeholder="name" formControlName="name" type="text" id="user" name="Name" />
+            <input class="input" placeholder="email" formControlName="email" type="text" id="email" name="email" />
+        </div>
+        <div class="align">
+            <label for="number" class="labels"> Number </label>
+            <label for="cpf" class="labels"> CPF </label>
+            <input class="input" formControlName="number" type="text" id="number" name="number" />
+            <input class="input" formControlName="cpf" type="text" id="cpf" name="cpf" />
+        </div>
+        <div class="align2">
+            <label for="birthDate" class="labels"> BirthDate </label>
+            <input class="input" formControlName="birthDate" type="date" id="birthDate" name="data" class="input" />
+        </div>
+        <div>
+            <h3>Endereço</h3>
+            <div class="align">
+                <label for="street" class="labels"> Street </label>
+                <label for="streetnum" class="labels"> StreetNumber </label>
+                <input formControlName="street" type="text" id="street" name="street" class="input" />
+                <input formControlName="streetNum" type="text" id="streetnum" name="streetnum" class="input" />
+            </div>
+            <div class="align">
+                <label for="distric" class="labels"> District </label>
+                <label for="city" class="labels"> City </label>
+                <input formControlName="district" type="text" id="district" name="district" class="input" />
+                <input formControlName="city" type="text" id="city" name="city" class="input" />
+            </div>
+            <div class="align">
+                <label for="state" class="labels"> State </label>
+                <label for="cep" class="labels"> CEP </label>
+                <select formControlName="state" >
+                    <option *ngFor="let uf of ufs">{{uf}}</option>
+                </select>
+                <input formControlName="cep" type="text" id="cep" name="cep" class="input" />
+            </div>
+        </div>
+        <div class="button">
+            <button type="submit">Save!</button>
+        </div>
+    </div>
+    </form>
+    <div class="table">
+    <h2>Names List</h2>
+        <table>
+            <tr>
+              <th>Index</th>
+              <th>Names</th>
+            </tr>
+            <tr *ngFor="let mock of mocks.saveName; index as i">
+              <td>{{i}}</td>
+              <td>{{mock.name}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
