@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule } from "@angular/forms";
 import { CrudDto } from '../../model/crud.dto';
 import { ShowCrudDto } from 'src/model/showcrud.dto';
+import { CrudService } from 'src/service/crud.service';
+// import { Route } from '@angular/router';
 
 @Component({
   selector: 'app-crud',
@@ -9,22 +11,7 @@ import { ShowCrudDto } from 'src/model/showcrud.dto';
   styleUrls: ['./crud.component.scss']
 })
 export class CrudComponent implements OnInit {
-   mocks = new ShowCrudDto;  
-  // mocks= [
-  //   {
-  //     name: "Joao",
-  //     email: "arroz@gmail",
-  //     number: "3188272631",
-  //     cpf: "1283731-58",
-  //     birthDate: "10/11/2020",
-  //     street: "rua almeida lima",
-  //     district: "zona sul",
-  //     state: "RJ",
-  //     streetNum: "25",
-  //     city: "new york",
-  //     cep: "123123-000",
-  //   }
-  // ]
+  mocks = new ShowCrudDto;  
 
 
   form: FormGroup | any;
@@ -71,7 +58,9 @@ export class CrudComponent implements OnInit {
     "city",
     "cep",
   ]
-  constructor() { }
+  constructor(
+    private service:CrudService,
+  ){}
 
   ngOnInit(): void {
     this.crudGetText(new CrudDto);
@@ -108,6 +97,9 @@ export class CrudComponent implements OnInit {
       this.form.controls[this.inputs[i]].setValue("");
     }
     //send to api
+  }
+  listBtn(): void {
+    this.service.getAll();
   }
 }
 

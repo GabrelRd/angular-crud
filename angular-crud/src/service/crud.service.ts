@@ -1,22 +1,25 @@
-import {HttpClient} from "@angular/common/http"
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
 import { CrudDto } from "src/model/crud.dto";
 
-export class CrudService{
 
-    API_CONFIG = "localhostexample";
-    constructor(private http:HttpClient){       
-    }
+@Injectable()
+export class CrudService {
+    API_CONFIG = "localhost:8080";
+    constructor(private http: HttpClient) { }
 
-    getUserById(id:Number){
-        let response=this.http.get<JSON>(`${this.API_CONFIG}/user/${id}`);
+    getUserById(id: Number) {
+        let response = this.http.get<JSON>(`${this.API_CONFIG}/user/${id}`);
         return response;
     }
-    getAll(){
-        let responseAll=this.http.get<JSON>(`${this.API_CONFIG}/user/list`);
-        return responseAll;
+    getAll() {
+        // let responseAll=this.http.get<JSON>(`${this.API_CONFIG}/user/list`);
+        // return responseAll;
+        console.log("teste");
     }
-    setUser(crud:CrudDto){
-        let responseAll=this.http.post<JSON>(`${this.API_CONFIG}/user`,crud);
+    setUser(crud: CrudDto) {
+        let responseAll = this.http.post<JSON>(`${this.API_CONFIG}/user`, crud);
     }
-        
-    }
+
+}
+

@@ -47,18 +47,21 @@
         </div>
     </div>
     </form>
+    <div class="align3">
     <div class="table">
         <h2>Names List</h2>
         <table>
             <tr>
-              <th>Index</th>
-              <th>Names</th>
+                <th>Index</th>
+                <th>Names</th>
             </tr>
             <tr *ngFor="let mock of mocks.saveName; index as i">
-              <td>{{i}}</td>
-              <td>{{mock.name}}</td>
+                <td>{{i}}</td>
+                <td>{{mock.name}}</td>
             </tr>
         </table>
+    </div>
+    <button class="button-list" (click)="listBtn()" >List!</button>
     </div>
 </div>
 
