@@ -3,7 +3,6 @@ import { FormControl, FormGroup, FormsModule } from "@angular/forms";
 import { CrudDto } from '../../model/crud.dto';
 import { ShowCrudDto } from 'src/model/showcrud.dto';
 import { CrudService } from 'src/service/crud.service';
-// import { Route } from '@angular/router';
 
 @Component({
   selector: 'app-crud',
@@ -65,7 +64,7 @@ export class CrudComponent implements OnInit {
   ngOnInit(): void {
     this.crudGetText(new CrudDto);
     this.mocks.saveName = [ ];
-    // this.crudShowText(new ShowCrudDto);
+
   }
 
   crudGetText(crudDto: CrudDto) {
@@ -85,12 +84,10 @@ export class CrudComponent implements OnInit {
       ;
   }
 
-
-
   saveBtn(): void {
     let formObj = this.form.getRawValue(CrudDto);
     let serialize = JSON.stringify(formObj);
-    // console.log(serialize);
+    console.log(serialize);
     this.mocks.saveName.push(formObj);
     console.log(this.mocks.saveName);
     for (let i = 0; i < this.inputs.length; i++) {    //clear input boxes values
@@ -98,8 +95,10 @@ export class CrudComponent implements OnInit {
     }
     //send to api
   }
+
   listBtn(): void {
-    this.service.getAll();
+    let jsonTest = this.service.getAll();
+    console.log(jsonTest);
   }
 }
 
