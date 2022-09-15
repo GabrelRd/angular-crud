@@ -24,6 +24,10 @@ public class CrudService {
          "cpf", "2000-05-12" , "street", 
         "streetNum", "district", "city", "state", "cep");
         modelTest.add(crudEntity);
+        CrudModel crudEntity1 = new CrudModel(2, "nome", "email22", "12number",
+         "c123pf", "2000-05-12" , "street", 
+        "stree445tNum", "dist645rict", "c756ity", "sta756te", "c756ep");
+        modelTest.add(crudEntity1);
         return modelTest;
     }
 }

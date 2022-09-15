@@ -14,20 +14,18 @@ export class CrudService {
         let response = this.http.get<JSON>(`${this.API_CONFIG}/user/${id}`);
         return response;
     }
-    // getAll():  Observable<CrudDto> {
-    //     // let response = this.http.get<JSON>(`${this.API_CONFIG}/user/list`);
+
+    getAll(): Observable<CrudDto>   {
+        // let response = this.http.get<JSON>(`${this.API_CONFIG}/user/list`);
+        // .subscribe({ next(CrudDto){ console.log(response) } })
+        console.log("Testeee"); 
+        return this.http.get<CrudDto>(`${this.API_CONFIG}/user/list`);
+    }
+    // getAll() {
     //     console.log("Testeee");
-    //     let response = this.http.get<CrudDto>(`${this.API_CONFIG}/user/list`);
-    //     response.subscribe();
-    //     console.log(response);
+    //     let response = this.http.get<JSON>(`${this.API_CONFIG}/user/list`).subscribe();
     //     return response;
     // }
-    getAll() {
-        // let response = this.http.get<JSON>(`${this.API_CONFIG}/user/list`);
-        console.log("Testeee");
-        let response = this.http.get<JSON>(`${this.API_CONFIG}/user/list`).subscribe();
-        return response;
-    }
     setUser(crud: CrudDto) {
         let responseAll = this.http.post<JSON>(`${this.API_CONFIG}/user`, crud);
     }
